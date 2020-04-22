@@ -1,0 +1,41 @@
+<div class="welcome">
+  <div class="header">
+    <ion-header >
+      <ion-toolbar color= "primary" class="top-toolbar" lines="none">
+        <ion-buttons  slot="start">
+          <ion-back-button class="is-small"></ion-back-button>
+        </ion-buttons>
+        <ion-title class="mytitle" size="large" lines="none">Welcome</ion-title>
+      </ion-toolbar>
+    
+      <ion-toolbar color = "primary" class="bottom-toolbar" lines="none">
+        <ion-title class="mytitle" size="small" slot="start" lines="none">Please register</ion-title>
+      </ion-toolbar>
+    </ion-header></div>
+    <div class="mybody">
+      <form [formGroup]="numberForm">
+<ion-item color="secondary-contrast" lines="none">
+        <ion-select placeholder="254" formControlName="extension">
+        
+          <ion-select-option  *ngFor="let c of countries" >+{{c.Number}}
+        </ion-select-option>
+    
+        </ion-select>
+      <ion-input  form type="tel" placeholder="input number" formControlName="number"></ion-input>
+      </ion-item>
+      <ion-item  color="secondary-contrast" lines="none">
+        <ion-button type="button" color="secondary" (click)="submit()" shape="round" slot="end">submit</ion-button>
+      </ion-item>
+    
+    </form>
+
+ </div>
+
+ <ion-item color="secondary-contrast" lines="none">
+   <ion-text color="primary">Already registed? click here</ion-text>
+
+ </ion-item>
+
+
+
+</div>

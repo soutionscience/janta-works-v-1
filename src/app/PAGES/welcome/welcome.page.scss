@@ -1,0 +1,35 @@
+.welcome{
+    .header{
+        color:white;
+        min-height: 400px;
+        .mytitle{
+        color: white;
+        }
+        .top-toolbar{
+            min-height: 150px;
+            padding-top:130px;
+            
+        }
+        .bottom-toolbar{
+            min-height: 150px;
+            padding-bottom: 130px;
+    
+        }
+    }
+    .body{
+        color: black;
+        .myForm{
+            color: black;
+        }
+    }
+    
+       
+    }
+    // ion-select{
+    //     --color: white;
+    //     background: white;
+    // }
+    // ion-select-option{
+    //     color: white;
+    //     --color: white;
+    // }
