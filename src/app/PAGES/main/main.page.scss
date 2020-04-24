@@ -1,0 +1,25 @@
+.main{
+    background-image: url('../../../assets/images/map.jpg');
+    min-height: 600px;
+    ion-content{
+        --background: url('../../../assets/images/map.jpg')
+    }
+}
+.map-result{
+
+    ion-item{
+        --min-height:200px;
+        --background: none
+    }
+}
+ion-searchbar{
+    --background: white;
+    opacity: 1;
+}
+
+.sliding-card{
+    ion-item{
+        --min-height:200px;
+        --background: none;
+    }
+}

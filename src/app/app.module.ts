@@ -11,14 +11,18 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StorageService } from './SERVICES/storage.service';
 import { IonicStorageModule } from '@ionic/storage';
+import{RestangularModule} from 'ngx-restangular'
+import { restangularConfigFactory } from './SHARED/restangular.config';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, 
+  imports: [
+    BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule, 
-     FormsModule, 
+    FormsModule, 
+    RestangularModule.forRoot(restangularConfigFactory),
      ReactiveFormsModule,
     IonicStorageModule.forRoot()],
   providers: [

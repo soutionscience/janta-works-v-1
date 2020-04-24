@@ -5,10 +5,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: ()=> import('./PAGES/welcome/welcome.module').then(m=>m.WelcomePageModule)
+    loadChildren: () => import('./PAGES/main/main.module').then( m => m.MainPageModule)
   },
+ 
   {
-    path: '',
+    path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
