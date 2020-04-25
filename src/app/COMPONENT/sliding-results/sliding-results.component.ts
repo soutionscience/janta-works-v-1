@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from 'src/app/SERVICES/api.service';
+import { IonInput } from '@ionic/angular';
 
 @Component({
   selector: 'app-sliding-results',
@@ -7,20 +8,14 @@ import { ApiService } from 'src/app/SERVICES/api.service';
   styleUrls: ['./sliding-results.component.scss'],
 })
 export class SlidingResultsComponent implements OnInit {
-  workers: string [];
+ @Input() workers: string [];
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.getWorkers()
+  // console.log('what is workers ', this.workers)
   }
-  getWorkers(){
-    this.api.getResource('users')
-    .subscribe(resp=>{
-      this.workers = resp;
-      console.log('getting ', this.workers)
-    })
 
-  }
+
 
 }

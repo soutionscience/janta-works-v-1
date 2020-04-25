@@ -1,7 +1,7 @@
 
-
-    <div class="workers"*ngFor="let w of workers"  lines ="none"> 
-    <ion-card>
+<ion-list lines="none" color="primary">
+    <div *ngIf="workers" class="workers"  lines ="none"> 
+    <ion-card *ngFor="let w of workers">
       <ion-card-header>
         <ion-grid>
           <ion-row>
@@ -11,9 +11,6 @@
             <ion-col>
              <ion-text>{{w.first_name}} </ion-text>
              <ion-text>{{w.last_name}}</ion-text>
-             <ion-row>
-               <ion-text>{{w.skill}}</ion-text>
-             </ion-row>
             </ion-col>
    
           </ion-row>
@@ -25,4 +22,4 @@
     </ion-card>
 
   </div>
-
+</ion-list>

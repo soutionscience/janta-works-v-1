@@ -13,7 +13,7 @@ export class ApiService {
   postResource(route, resouce): Observable<any>{
     return this.restangular.all(route).post(resouce)
   }
-  getResource(route): Observable<any>{
+   getResource = (route): Observable<any>=>{
     return this.restangular.all(route).getList()
   }
 }
