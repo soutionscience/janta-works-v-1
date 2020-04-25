@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary" class="top-toolbar">
+    <ion-buttons  slot="start">
+      <ion-back-button class="is-small"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="mytitles" lines="none" slot="start">Continue registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="form">
+  <ion-card>
+    <form [formGroup]="workerRegisterForm">
+      <ion-item lines="none">
+        <ion-label> <ion-text color="primary">Number:</ion-text></ion-label>
+        <ion-input type="number" placeholder="0724604800"
+        required formControlName="number"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label><ion-text color="primary">First Name:</ion-text></ion-label>
+        <ion-input type="text" 
+        autofocus=true placeholder="Enter first name"
+        required formControlName="first_name"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label><ion-text color="primary">Last Name:</ion-text></ion-label>
+        <ion-input type="text" 
+        autofocus=true placeholder="Enter last name"
+        required formControlName="last_name"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label><ion-text color="primary">Skill:</ion-text></ion-label>
+        <ion-input  name="skill" placeholder="e.g carpenter, cook, plumber"
+        formControlName="skill"></ion-input>
+      </ion-item>
+      <ion-button button type="submit" (click)="register()" expand="block" slot="secondary" color="secondary">Next</ion-button>
+    </form>
+
+  </ion-card>
+
+</div>
+
+
+</ion-content>

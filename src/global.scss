@@ -24,3 +24,39 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.mytitles{
+    color:white;
+    font-weight: normal;
+    margin:10px;
+}
+.top-toolbar{
+    min-height: 150px;
+    padding-top:130px;
+    
+}
+form{
+    --background: none;
+}
+ion-content{
+    --background: none;
+}
+ion-item{
+    --background:none;
+}
+ion-card{
+    --background: none;
+}
+ion-label{
+    color: grey
+    p{
+        color: grey;
+    }
+}
+ion-card{
+    --background: none
+}
+ion-list{
+    --background: none
+}

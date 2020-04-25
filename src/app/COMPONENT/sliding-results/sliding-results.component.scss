@@ -1,9 +1,30 @@
 .results{
     ion-list{
-        --background: white;
+        --background: none;
         ion-item-sliding{
-            --background:white
+            --background: none;
         }
         
     }
+    background-color: transparent;
+}
+.workers{
+    background-color: transparent;
+}
+ion-item{
+    --background: white;
+}
+ion-item-options{
+    --background: none;
+}
+ion-list{
+    --background: red;
+    --ion-background-color:#fff;
+
+}
+ion-content{
+    --background:red;
+}
+ion-card{
+    --background: white;
 }
