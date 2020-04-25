@@ -9,6 +9,11 @@ import { IonInput } from '@ionic/angular';
 })
 export class SlidingResultsComponent implements OnInit {
  @Input() workers: string [];
+ sliderConfig ={
+  spaceBetween: 10,
+  centeredSlides: true,
+   slidesPerView: 1.7
+}
 
   constructor(private api: ApiService) { }
 

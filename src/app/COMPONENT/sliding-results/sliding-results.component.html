@@ -1,25 +1,35 @@
+<div class="slider">
 
-<ion-list lines="none" color="primary">
-    <div *ngIf="workers" class="workers"  lines ="none"> 
-    <ion-card *ngFor="let w of workers">
-      <ion-card-header>
-        <ion-grid>
-          <ion-row>
-            <ion-col>         <ion-avatar>
-              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-            </ion-avatar>  </ion-col>
-            <ion-col>
-             <ion-text>{{w.first_name}} </ion-text>
-             <ion-text>{{w.last_name}}</ion-text>
-            </ion-col>
-   
-          </ion-row>
-     
-        </ion-grid>
-       
-      </ion-card-header>
+    <div class="mycards">
+      <ion-slides [options] ="sliderConfig">
+        <ion-slide *ngFor="let w of workers"> 
+          <ion-card class="cards">
+            <ion-item class="cards" lines="none">
+              <ion-avatar>
+                <img src="https://via.placeholder.com/300">
+              </ion-avatar> &nbsp;
+              <ion-label> {{w.first_name}} {{w.last_name}}</ion-label>
+              <!-- <ion-button fill="outline" slot="end">View</ion-button> -->
+            </ion-item>
+            <ion-item lines="none">
+              <ion-text>{{w.skill}}</ion-text>
+            </ion-item>
+
+          
+            <ion-card-content>
+              <ion-item lines="none">status: &nbsp; <span class="available">Available</span></ion-item>
+              <ion-item lines="none">Ratings: &nbsp; <span class="ratings">4.5</span></ion-item>
+              <ion-item lines="none"><img src="../../../assets/images/stars.png" alt=""></ion-item>
+
+
+            </ion-card-content>
+            <ion-button expand="full"><p>Hire</p></ion-button>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+
+
   
-    </ion-card>
-
-  </div>
-</ion-list>
+</div>

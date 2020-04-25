@@ -28,3 +28,40 @@ ion-content{
 ion-card{
     --background: white;
 }
+
+ion-label{
+    --color: black;
+}
+.mycards{
+    color: black;
+    p{
+        color: black;
+    }
+}
+.cards{
+    margin:0;
+    width: 100%;
+}
+ion-card-content{
+   
+    padding: 0;
+    margin:0;
+    ion-item{
+        margin: 0;
+        padding:0;
+    }
+    ion-button{
+        --background: red;
+       p{
+           color: white
+       }
+    }
+    .available{
+    color: #01b369;
+    
+    }
+    .rating:{
+        font-weight: bold;
+    }
+
+}
