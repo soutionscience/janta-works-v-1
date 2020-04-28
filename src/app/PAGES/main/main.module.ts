@@ -8,6 +8,7 @@ import { MainPageRoutingModule } from './main-routing.module';
 
 import { MainPage } from './main.page';
 import { SlidingResultsComponent } from 'src/app/COMPONENT/sliding-results/sliding-results.component';
+import { SearchComponent } from 'src/app/COMPONENT/search/search.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { SlidingResultsComponent } from 'src/app/COMPONENT/sliding-results/slidi
     IonicModule,
     MainPageRoutingModule
   ],
-  declarations: [MainPage, SlidingResultsComponent]
+  declarations: [MainPage, SlidingResultsComponent, SearchComponent]
 })
 export class MainPageModule {}

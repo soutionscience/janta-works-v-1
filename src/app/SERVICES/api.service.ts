@@ -16,4 +16,10 @@ export class ApiService {
    getResource = (route): Observable<any>=>{
     return this.restangular.all(route).getList()
   }
+  searchOne = (route, resource): Observable<any>=>{
+    return this.restangular.all(route, resource).getList()
+  }
+  getSpecificResource(apiRoute, id): Observable<any[]>{
+    return this.restangular.one(apiRoute,id).getList()
+  }
 }
