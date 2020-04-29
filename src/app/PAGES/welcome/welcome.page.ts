@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StorageService } from 'src/app/SERVICES/storage.service';
+import { ApiService } from 'src/app/SERVICES/api.service';
+import { User } from 'src/app/SHARED/user.model';
 
 @Component({
   selector: 'app-welcome',
@@ -9,10 +11,13 @@ import { StorageService } from 'src/app/SERVICES/storage.service';
 })
 export class WelcomePage implements OnInit {
   countries: {flag: string, Number: number}[]=[];
-  numberForm: FormGroup
+  numberForm: FormGroup;
+  showError: boolean = false;
+  data:any;
   
 
-  constructor(private fb: FormBuilder, private storageService: StorageService) {
+  constructor(private fb: FormBuilder, private storageService: StorageService, 
+    private api: ApiService) {
     this.setUpCounty()
     this.createForm()
    }
@@ -32,12 +37,21 @@ export class WelcomePage implements OnInit {
   }
 
   submit(){
-    this.storageService.addNumber(this.numberForm.value);
-    this.getNumberBack()
+    this.api.postResource('users', this.numberForm.value)
+    .subscribe(resp=> {
+      this.data = resp
+      console.log(this.data.number)
+      this.storageService.addUser(this.data._id, this.data.number, this.data.extension);
+     this.getNumberBack();
+    }, error=>{
+      this.showError = true;
+    })
+  
+
   }
   getNumberBack(){
-    this.storageService.getNumber()
-    .then((resp)=>console.log('resp ', resp))
+    this.storageService.getUser()
+    .then((resp)=>console.log('resp storage ', resp))
   }
 
 }

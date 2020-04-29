@@ -22,6 +22,11 @@
     
         </ion-select>
       <ion-input  form type="tel" placeholder="input number" formControlName="number"></ion-input>
+      
+      </ion-item>
+      <ion-item slot="end" lines="none" *ngIf="showError">    
+          <ion-text slot="end" class="warning" color="danger">Number already registered</ion-text>
+
       </ion-item>
       <ion-item  color="secondary-contrast" lines="none">
         <ion-button type="button" color="secondary" (click)="submit()" shape="round" slot="end">submit</ion-button>

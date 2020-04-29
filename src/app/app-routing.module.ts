@@ -5,7 +5,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./PAGES/main/main.module').then( m => m.MainPageModule)
+    redirectTo: 'welcome',
+    pathMatch:'full'
   },
  
   {

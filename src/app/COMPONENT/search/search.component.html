@@ -1,3 +1,15 @@
-<ion-searchbar  #box showCancelButton="always" animated (keyup)="onKey(box.value)"
+<div class="search">
+
+  <ion-searchbar  #box showCancelButton="always" animated (keyup)="onKey(box.value)"
 placeholder="Electrician plumber, chapo cook" ></ion-searchbar>
+<ion-list *ngIf="showList">
+  <ion-item lines="none" 
+  *ngFor="let i of result" 
+  (click)="select(i.name)" class="search">{{i.name}}</ion-item>
+</ion-list>
+
+
+
+
+</div>
 

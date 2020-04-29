@@ -8,15 +8,20 @@ import { ApiService } from 'src/app/SERVICES/api.service';
 })
 export class SearchComponent implements OnInit {
 
-  result = []
+  result: any []
+  showList: boolean = false;
 
   constructor(private api: ApiService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.showList = false;
+  }
 
   onKey(term){
    this.api.getSpecificResource('skills/search', term)
-   .subscribe(resp => console.log(resp))
+   .subscribe(resp => {this.result = resp, this.showList = true})
   }
-
+  select(skill){
+    console.log('selected ', skill)
+  }
 }

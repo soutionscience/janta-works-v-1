@@ -1,0 +1,16 @@
+.search{
+    background-color: white;
+}
+
+
+ion-list{
+    --background: #f5f5f5f5;
+ //  border: red solid 1px ;
+    ion-item{
+        --background: white;
+    }
+    ion-item:hover{
+        --background: #f5f5f5f5;
+        border: grey solid 1px;
+    }
+}
