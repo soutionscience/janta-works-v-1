@@ -1,0 +1,129 @@
+<!-- <div class="job-post">
+  <div class="header">
+    <ion-header  >
+      <ion-toolbar color= "primary" class="top-toolbar" lines="none" >
+        <ion-buttons  slot="start">
+          <ion-back-button class="is-small"></ion-back-button>
+        </ion-buttons>
+
+        <ion-grid> 
+          <ion-row class="ion-align-items-center">
+            <ion-col>
+              <div class="ion-text-center">
+                <ion-text class="mytitle" size="large" lines="none" >Post a job</ion-text>
+              </div>
+      
+            </ion-col>
+      
+          </ion-row>
+    
+         </ion-grid>
+       
+     
+      </ion-toolbar>
+    
+      <ion-toolbar color = "primary" class="bottom-toolbar" lines="none">
+      <ion-grid> 
+        <ion-row class="ion-align-items-center">
+          <ion-col>
+            <div class="ion-text-center">
+              <ion-card color="danger">
+               <ion-label position="stacked" class="ion-text-center">Title</ion-label>
+               <ion-input class="text-input" placeholder="Chapo Cook needed"></ion-input>
+               
+           
+              
+              </ion-card>
+           
+               
+             
+            </div>
+    
+          </ion-col>
+    
+        </ion-row>
+  
+       </ion-grid>
+
+      </ion-toolbar>
+    </ion-header>
+  </div>
+    <div class="body">
+    
+      <ion-content color="secondary">
+
+        <ion-card>
+          test
+        </ion-card>
+       
+
+      </ion-content>
+    </div>
+
+</div> -->
+<ion-header color="primary" lines="none">
+  <ion-toolbar color="primary" lines="none"> 
+<ion-grid>
+  <ion-row class="ion-align-items-center">
+    <ion-col>
+      <div class="ion-text-center">
+        <ion-title class="mytitle" size="small">Post a job</ion-title>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-align-items-center">
+    <ion-col>
+      <div class="ion-text-center header-input">
+        <ion-label size="small">Category</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Home Services</ion-select-option>
+          <ion-select-option value="m">Car services</ion-select-option>
+        </ion-select>
+      </div>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
+
+  </ion-toolbar>
+
+</ion-header>
+<ion-content color="secondary-contrast" lines="none">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <div class="ion-text-center">
+            <ion-card>
+              <ion-card-title>
+                <ion-title size= "small">Job title</ion-title>
+              </ion-card-title>
+              <ion-card-content>
+                <ion-input placeholder="cook chapos for party"></ion-input>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="ion-text-center">
+            <ion-card>
+              <ion-card-title>
+                <ion-title size="small">Select Job Date</ion-title>
+              </ion-card-title>
+              <ion-card-content>
+                <ion-item>
+                  <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>
+                  <ion-datetime value="1995-04-15" min="1990-02" max="2000"
+                    [dayShortNames]="customDayShortNames"
+                    displayFormat="DDD. MMM DD, YY"
+                    monthShortNames="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des"></ion-datetime>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

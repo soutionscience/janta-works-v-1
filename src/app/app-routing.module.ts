@@ -5,7 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'welcome',
+    redirectTo: 'job-post',
     pathMatch:'full'
   },
  
@@ -40,7 +40,12 @@ const routes: Routes = [
   {
     path: 'worker-registration',
     loadChildren: () => import('./PAGES/worker-registration/worker-registration.module').then( m => m.WorkerRegistrationPageModule)
+  },
+  {
+    path: 'job-post',
+    loadChildren: () => import('./PAGES/job-post/job-post.module').then( m => m.JobPostPageModule)
   }
+
 
 ];
 @NgModule({
