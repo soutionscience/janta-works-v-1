@@ -5,7 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'job-post-sliders',
+    redirectTo: 'categories',
     pathMatch:'full'
   },
  
@@ -48,7 +48,12 @@ const routes: Routes = [
   {
     path: 'job-post-sliders',
     loadChildren: () => import('./PAGES/job-post-sliders/job-post-sliders.module').then( m => m.JobPostSlidersPageModule)
+  },
+  {
+    path: 'categories',
+    loadChildren: () => import('./PAGES/categories/categories.module').then( m => m.CategoriesPageModule)
   }
+
 
 
 
