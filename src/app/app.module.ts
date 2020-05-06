@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy, IonSlide, IonSlides } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -28,6 +28,7 @@ import { restangularConfigFactory } from './SHARED/restangular.config';
   providers: [
     StatusBar,
     SplashScreen,
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
    // StorageService
   ],
