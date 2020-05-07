@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StorageService } from 'src/app/SERVICES/storage.service';
 import { ApiService } from 'src/app/SERVICES/api.service';
 import { User } from 'src/app/SHARED/user.model';
+import { Category } from 'src/app/SHARED/categories.interface';
 
 @Component({
   selector: 'app-welcome',
@@ -14,6 +15,7 @@ export class WelcomePage implements OnInit {
   numberForm: FormGroup;
   showError: boolean = false;
   data:any;
+  categories: Category [];
   
 
   constructor(private fb: FormBuilder, private storageService: StorageService, 
@@ -23,6 +25,7 @@ export class WelcomePage implements OnInit {
    }
 
   ngOnInit() {
+    this.getCategories()
   }
   setUpCounty(){
     let obj = {flag: "../../../assets/images/Kenya_flag_300.png", Number: +254}
@@ -40,7 +43,7 @@ export class WelcomePage implements OnInit {
     this.api.postResource('users', this.numberForm.value)
     .subscribe(resp=> {
       this.data = resp
-      console.log(this.data.number)
+     // console.log(this.data.number)
       this.storageService.addUser(this.data._id, this.data.number, this.data.extension);
      this.getNumberBack();
     }, error=>{
@@ -52,6 +55,17 @@ export class WelcomePage implements OnInit {
   getNumberBack(){
     this.storageService.getUser()
     .then((resp)=>console.log('resp storage ', resp))
+  }
+
+  getCategories(){
+    this.api.getResource('categories')
+    .subscribe((resp)=>{
+    //  console.log(resp.length)
+    resp.forEach(element => {
+      this.storageService.addCategories(element)
+    });
+   this.storageService.setCategory()
+    })
   }
 
 }

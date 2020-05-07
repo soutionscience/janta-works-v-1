@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/SERVICES/api.service';
+import { StorageService } from 'src/app/SERVICES/storage.service';
+import { Category } from 'src/app/SHARED/categories.interface';
 
 @Component({
   selector: 'app-worker-registration',
@@ -9,11 +11,14 @@ import { ApiService } from 'src/app/SERVICES/api.service';
 })
 export class WorkerRegistrationPage implements OnInit {
   workerRegisterForm: FormGroup;
+  categories: Category [];
 
-  constructor(private fb: FormBuilder, private api: ApiService) { }
+  constructor(private fb: FormBuilder, private api: ApiService,
+    private storage: StorageService) { }
 
   ngOnInit() {
     this.createForm()
+    this.getCategories()
   }
 
   createForm(){
@@ -28,6 +33,14 @@ export class WorkerRegistrationPage implements OnInit {
   register(){
    this.api.postResource('users', this.workerRegisterForm.value)
    .subscribe(resp=> console.log('posted ', resp))
+  }
+  getCategories(){
+    this.storage.getCategories()
+    .then((resp=>{
+      this.categories = resp;
+      //console.log('fetched ', this.categories)
+    }))
+
   }
 
 }
