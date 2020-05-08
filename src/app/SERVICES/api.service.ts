@@ -22,4 +22,7 @@ export class ApiService {
   getSpecificResource(apiRoute, id): Observable<any[]>{
     return this.restangular.one(apiRoute,id).getList()
   }
+  getVerySpecificResource(apiRoute, resourceName, id): Observable<any[]>{
+    return this.restangular.one(apiRoute, resourceName).all(id).getList()
+  }
 }

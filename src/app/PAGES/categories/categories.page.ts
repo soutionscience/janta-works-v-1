@@ -21,5 +21,10 @@ export class CategoriesPage implements OnInit {
    //   console.log(this.categories.length)
     })
   }
+  selectCategory(id){
+    console.log('testing ', id);
+    this.api.getSpecificResource('users/category', id)
+    .subscribe((resp)=>{console.log('resp ', resp)})
+  }
 
 }

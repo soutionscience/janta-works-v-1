@@ -5,7 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'worker-registration',
+    redirectTo: 'categories',
     pathMatch:'full'
   },
  

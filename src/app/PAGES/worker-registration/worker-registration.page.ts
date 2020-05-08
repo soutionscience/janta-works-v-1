@@ -26,7 +26,9 @@ export class WorkerRegistrationPage implements OnInit {
       number: ['', [Validators.required]],
       first_name: ['', [Validators.required]],
       last_name:['', [Validators.required]],
-      skill:['', [Validators.required]]
+      skill:['', [Validators.required]],
+      category:['', [Validators.required]],
+      
     }
     )
   }

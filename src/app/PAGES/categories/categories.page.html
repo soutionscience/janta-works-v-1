@@ -31,7 +31,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let c of categories" >
-        <ion-card>
+        <ion-card (click)="selectCategory(c._id)">
           <ion-card-header>
    <img [src]="'../../../assets/images/icons/categories/coloured/' + c.image + '.png'" alt="">
           </ion-card-header>

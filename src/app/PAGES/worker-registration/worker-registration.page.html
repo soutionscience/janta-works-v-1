@@ -30,8 +30,8 @@
       </ion-item>
       <ion-item interface ="ion-action-sheet" lines="none">
         <ion-label>Categories</ion-label>
-        <ion-select placeholder="Select One" interface ="ion-action-sheet">
-          <ion-select-option value="f" *ngFor="let c of categories">{{c.title}}</ion-select-option>
+        <ion-select placeholder="Select One" interface ="ion-action-sheet" formControlName="category">
+          <ion-select-option value={{c._id}} *ngFor="let c of categories">{{c.title}}</ion-select-option>
         
         </ion-select>
       </ion-item>
