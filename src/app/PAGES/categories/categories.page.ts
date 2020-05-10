@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/SERVICES/api.service';
+import { ModalController } from '@ionic/angular';
+import { MainPage } from '../main/main.page';
+import { CategoryWorkersPage } from '../category-workers/category-workers.page';
 
 @Component({
   selector: 'app-categories',
@@ -8,11 +11,13 @@ import { ApiService } from 'src/app/SERVICES/api.service';
 })
 export class CategoriesPage implements OnInit {
   categories: string [];
+  freeLancers: any []
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private modalCtr: ModalController) { }
 
   ngOnInit() {
-    this.getCategories()
+    this.getCategories();
+    this.selectCategory('5eb2ec3208731061089f9a62')
   }
   getCategories(){
     this.api.getResource('categories')
@@ -24,7 +29,15 @@ export class CategoriesPage implements OnInit {
   selectCategory(id){
     console.log('testing ', id);
     this.api.getSpecificResource('users/category', id)
-    .subscribe((resp)=>{console.log('resp ', resp)})
+    .subscribe((resp)=>{
+      this.freeLancers = resp;
+      console.log('free lancers ', this.freeLancers)
+      this.modalCtr.create({
+        component: CategoryWorkersPage,
+        componentProps: this.freeLancers
+      }).then((resp)=>resp.present())
+
+    },error=> console.log('there is an error ', error))
   }
 
 }

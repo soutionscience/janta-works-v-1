@@ -52,7 +52,11 @@ const routes: Routes = [
   {
     path: 'categories',
     loadChildren: () => import('./PAGES/categories/categories.module').then( m => m.CategoriesPageModule)
+  },  {
+    path: 'category-workers',
+    loadChildren: () => import('./PAGES/category-workers/category-workers.module').then( m => m.CategoryWorkersPageModule)
   }
+
 
 
 

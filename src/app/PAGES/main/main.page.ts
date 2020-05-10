@@ -12,6 +12,7 @@ export class MainPage implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit() {
+
   }
   ionViewWillEnter(){
     this.getWorkers()

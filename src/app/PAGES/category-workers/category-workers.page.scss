@@ -1,0 +1,7 @@
+.main{
+    background-image: url('../../../assets/images/map.jpg');
+    min-height: 600px;
+    ion-content{
+        --background: url('../../../assets/images/map.jpg')
+    }
+}
