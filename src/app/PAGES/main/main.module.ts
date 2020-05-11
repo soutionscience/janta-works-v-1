@@ -19,6 +19,6 @@ import { SharedModule } from 'src/app/SHARED/shared/shared.module';
     MainPageRoutingModule,
     SharedModule
   ],
-  declarations: [MainPage,SearchComponent, SlidingResultsComponent]
+  declarations: [MainPage,SearchComponent,]
 })
 export class MainPageModule {}

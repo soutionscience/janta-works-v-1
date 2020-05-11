@@ -6,12 +6,12 @@ import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [SlidingResultsComponent],
   imports: [
     CommonModule,
     IonicModule,
     
   ],
-  exports:[]
+  exports:[SlidingResultsComponent]
 })
 export class SharedModule { }

@@ -8,6 +8,7 @@ import { CategoriesPageRoutingModule } from './categories-routing.module';
 
 import { CategoriesPage } from './categories.page';
 import { CategoryWorkersPage } from '../category-workers/category-workers.page';
+import { SharedModule } from 'src/app/SHARED/shared/shared.module';
 
 @NgModule({
   entryComponents:[CategoryWorkersPage],
@@ -15,7 +16,8 @@ import { CategoryWorkersPage } from '../category-workers/category-workers.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    CategoriesPageRoutingModule
+    CategoriesPageRoutingModule,
+    SharedModule
   ],
   declarations: [CategoriesPage, CategoryWorkersPage]
 })

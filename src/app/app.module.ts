@@ -16,9 +16,10 @@ import { restangularConfigFactory } from './SHARED/restangular.config';
 import { SharedModule } from './SHARED/shared/shared.module';
 import { SlidingResultsComponent } from './COMPONENT/sliding-results/sliding-results.component';
 import { MainPage } from './PAGES/main/main.page';
+import { MainPageModule } from './PAGES/main/main.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ],
   entryComponents: [],
   imports: [
     BrowserModule, 
@@ -29,6 +30,7 @@ import { MainPage } from './PAGES/main/main.page';
     ReactiveFormsModule,
     IonicStorageModule.forRoot(),
     SharedModule,
+   // MainPageModule
   ],
   providers: [
     StatusBar,
