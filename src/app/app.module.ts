@@ -13,6 +13,9 @@ import { StorageService } from './SERVICES/storage.service';
 import { IonicStorageModule } from '@ionic/storage';
 import{RestangularModule} from 'ngx-restangular'
 import { restangularConfigFactory } from './SHARED/restangular.config';
+import { SharedModule } from './SHARED/shared/shared.module';
+import { SlidingResultsComponent } from './COMPONENT/sliding-results/sliding-results.component';
+import { MainPage } from './PAGES/main/main.page';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,8 +26,10 @@ import { restangularConfigFactory } from './SHARED/restangular.config';
     AppRoutingModule, 
     FormsModule, 
     RestangularModule.forRoot(restangularConfigFactory),
-     ReactiveFormsModule,
-    IonicStorageModule.forRoot()],
+    ReactiveFormsModule,
+    IonicStorageModule.forRoot(),
+    SharedModule,
+  ],
   providers: [
     StatusBar,
     SplashScreen,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SlidingResultsComponent } from './COMPONENT/sliding-results/sliding-results.component';
 
 const routes: Routes = [
   {
@@ -52,7 +53,8 @@ const routes: Routes = [
   {
     path: 'categories',
     loadChildren: () => import('./PAGES/categories/categories.module').then( m => m.CategoriesPageModule)
-  },  {
+  },
+  {
     path: 'category-workers',
     loadChildren: () => import('./PAGES/category-workers/category-workers.module').then( m => m.CategoryWorkersPageModule)
   }
@@ -68,6 +70,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule
   ],
+  declarations:[],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

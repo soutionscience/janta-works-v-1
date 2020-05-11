@@ -9,14 +9,16 @@ import { MainPageRoutingModule } from './main-routing.module';
 import { MainPage } from './main.page';
 import { SlidingResultsComponent } from 'src/app/COMPONENT/sliding-results/sliding-results.component';
 import { SearchComponent } from 'src/app/COMPONENT/search/search.component';
+import { SharedModule } from 'src/app/SHARED/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MainPageRoutingModule
+    MainPageRoutingModule,
+    SharedModule
   ],
-  declarations: [MainPage, SlidingResultsComponent, SearchComponent]
+  declarations: [MainPage,SearchComponent, SlidingResultsComponent]
 })
 export class MainPageModule {}

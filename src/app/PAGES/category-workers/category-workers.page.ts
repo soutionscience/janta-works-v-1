@@ -7,10 +7,11 @@ import { NavParams } from '@ionic/angular';
   styleUrls: ['./category-workers.page.scss'],
 })
 export class CategoryWorkersPage implements OnInit {
-  category: any [];
+  workers: any [] = [];
 
   constructor(private navParam: NavParams) { 
-    console.log('what are you receiveing ', this.navParam.data)
+    console.log('what are you receiveing ', this.navParam.data);
+    this.workers.push(this.navParam.data)
   }
 
   ngOnInit() {
