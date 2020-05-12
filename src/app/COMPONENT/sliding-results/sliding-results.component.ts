@@ -16,7 +16,7 @@ export class SlidingResultsComponent implements OnInit {
  sliderConfig ={
   spaceBetween: 10,
   centeredSlides: true,
-   slidesPerView: 1.7
+   slidesPerView: 1.4
 }
 
   constructor(private api: ApiService) { }

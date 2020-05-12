@@ -3,29 +3,43 @@
     <div class="mycards">
       <ion-slides [options] ="sliderConfig">
         <ion-slide *ngFor="let w of workers"> 
-          <ion-card class="cards">
-            <ion-item class="cards" lines="none">
-              <ion-avatar>
-                <img src="../../../assets/avatars/avatar1.png">
-              </ion-avatar> &nbsp;
-              <ion-label> {{w.first_name}} {{w.last_name}}</ion-label>
-              <!-- <ion-button fill="outline" slot="end">View</ion-button> -->
-            </ion-item>
-            <ion-item lines="none">
-              <ion-text>{{w.skill}}</ion-text>
-            </ion-item>
+          <div class="card">
 
-          
-            <ion-card-content>
-              <ion-item lines="none">status: &nbsp; <span class="available">Available</span></ion-item>
-              <ion-item lines="none">Ratings: &nbsp; <span class="ratings">{{w.average_rating}}</span></ion-item>
-              <ion-item lines="none"><img src="../../../assets/images/stars.png" alt="" width="20px" height="20px"></ion-item>
-              <ion-item lines="none"> completion Rate: &nbsp; <span class="completion">{{w.completion_rate}} %</span></ion-item>
+            <header class="card-header">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img [src]="'../../../assets/avatars/' + w.image +'.png'" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-5">{{w.first_name}} {{w.last_name}}</p>
+                  <p class="subtitle is-6">{{w.skill}}</p>
+                  <p class="subtitle is-6 stars">
+                  <!-- //  <img src="../../../assets/images/stars.png" alt=""> -->
+                  </p>
+                </div>
+              </div>
+        
+            </header>
 
+  <div class="card-content">
 
-            </ion-card-content>
-            <ion-button expand="full"><p>Hire</p></ion-button>
-          </ion-card>
+  
+
+    <div class="content has-text-left">
+      <p>Distance: <span class="has-text-primary">5.4 Km</span> Away</p>
+      <p>Completion rate: {{w.completion_rate}} % </p>
+      <p>458/500 jobs completed</p>
+      
+      <p>Availability: <span class="has-text-primary"> Available</span></p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="button is-primary is-fullwidth is-medium">Hire</button>
+  </div>
+</div>
+
         </ion-slide>
       </ion-slides>
     </div>

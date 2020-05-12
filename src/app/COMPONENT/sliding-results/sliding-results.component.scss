@@ -38,9 +38,10 @@ ion-label{
         color: black;
     }
 }
-.cards{
+.card{
     margin:0;
     width: 100%;
+    min-width: 100px;
 }
 ion-card-content{
    
@@ -64,4 +65,17 @@ ion-card-content{
         font-weight: bold;
     }
 
+}
+.distance{
+    color: green;
+}
+.card-header{
+    padding:8px;
+}
+.stars{
+    min-height: 11px;
+    margin-top: 0;
+    background-image: url('../../../assets/images/stars.png');
+    width: 100%;
+    
 }
