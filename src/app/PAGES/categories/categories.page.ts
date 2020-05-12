@@ -3,6 +3,7 @@ import { ApiService } from 'src/app/SERVICES/api.service';
 import { ModalController } from '@ionic/angular';
 import { MainPage } from '../main/main.page';
 import { CategoryWorkersPage } from '../category-workers/category-workers.page';
+import { Worker } from 'src/app/SHARED/worker.model';
 
 @Component({
   selector: 'app-categories',
@@ -11,7 +12,7 @@ import { CategoryWorkersPage } from '../category-workers/category-workers.page';
 })
 export class CategoriesPage implements OnInit {
   categories: string [];
-  freeLancers: any []
+  freeLancers: Worker []
 
   constructor(private api: ApiService, private modalCtr: ModalController) { }
 
@@ -34,7 +35,7 @@ export class CategoriesPage implements OnInit {
       console.log('free lancers ', this.freeLancers)
       this.modalCtr.create({
         component: CategoryWorkersPage,
-        componentProps: this.freeLancers
+        componentProps: {test: this.freeLancers}
       }).then((resp)=>resp.present())
 
     },error=> console.log('there is an error ', error))

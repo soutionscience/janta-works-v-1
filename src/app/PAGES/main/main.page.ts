@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/SERVICES/api.service';
+import {Worker} from '../../SHARED/worker.model'
 
 @Component({
   selector: 'app-main',
@@ -7,7 +8,7 @@ import { ApiService } from 'src/app/SERVICES/api.service';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-  workers: string [];
+  workers: Worker [];
 
   constructor(private api: ApiService) { }
 

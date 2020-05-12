@@ -1,12 +1,12 @@
 <div class="slider">
-
+  <link rel="stylesheet" href="../../../assets/css/bulma-0.8.2/css/bulma.min.css">
     <div class="mycards">
       <ion-slides [options] ="sliderConfig">
         <ion-slide *ngFor="let w of workers"> 
           <ion-card class="cards">
             <ion-item class="cards" lines="none">
               <ion-avatar>
-                <img src="https://via.placeholder.com/300">
+                <img src="../../../assets/avatars/avatar1.png">
               </ion-avatar> &nbsp;
               <ion-label> {{w.first_name}} {{w.last_name}}</ion-label>
               <!-- <ion-button fill="outline" slot="end">View</ion-button> -->
@@ -18,8 +18,9 @@
           
             <ion-card-content>
               <ion-item lines="none">status: &nbsp; <span class="available">Available</span></ion-item>
-              <ion-item lines="none">Ratings: &nbsp; <span class="ratings">4.5</span></ion-item>
-              <ion-item lines="none"><img src="../../../assets/images/stars.png" alt=""></ion-item>
+              <ion-item lines="none">Ratings: &nbsp; <span class="ratings">{{w.average_rating}}</span></ion-item>
+              <ion-item lines="none"><img src="../../../assets/images/stars.png" alt="" width="20px" height="20px"></ion-item>
+              <ion-item lines="none"> completion Rate: &nbsp; <span class="completion">{{w.completion_rate}} %</span></ion-item>
 
 
             </ion-card-content>

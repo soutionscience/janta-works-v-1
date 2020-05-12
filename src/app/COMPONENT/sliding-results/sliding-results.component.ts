@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/SERVICES/api.service';
 import { IonInput } from '@ionic/angular';
 import { IonSlides } from '@ionic/angular';
+import { Worker } from 'src/app/SHARED/worker.model';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { IonSlides } from '@ionic/angular';
   styleUrls: ['./sliding-results.component.scss'],
 })
 export class SlidingResultsComponent implements OnInit {
- @Input() workers: string [];
+ @Input() workers: Worker [];
 //  @ViewChild(IonSlides, static:bool) slides: IonSlides;
  sliderConfig ={
   spaceBetween: 10,
