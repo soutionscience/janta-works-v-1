@@ -6,7 +6,7 @@ import { SlidingResultsComponent } from './COMPONENT/sliding-results/sliding-res
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'categories',
+    redirectTo: 'welcome',
     pathMatch:'full'
   },
  

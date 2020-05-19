@@ -4,6 +4,7 @@ import { StorageService } from 'src/app/SERVICES/storage.service';
 import { ApiService } from 'src/app/SERVICES/api.service';
 import { User } from 'src/app/SHARED/user.model';
 import { Category } from 'src/app/SHARED/categories.interface';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-welcome',
@@ -19,7 +20,7 @@ export class WelcomePage implements OnInit {
   
 
   constructor(private fb: FormBuilder, private storageService: StorageService, 
-    private api: ApiService) {
+    private api: ApiService, private navCtr: NavController) {
     this.setUpCounty()
     this.createForm()
    }
@@ -45,7 +46,9 @@ export class WelcomePage implements OnInit {
       this.data = resp
      // console.log(this.data.number)
       this.storageService.addUser(this.data._id, this.data.number, this.data.extension);
-     this.getNumberBack();
+    // this.getNumberBack();
+    this.navCtr.navigateForward("/categories")
+
     }, error=>{
       this.showError = true;
     })

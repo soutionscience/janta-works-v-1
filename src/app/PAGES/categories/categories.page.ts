@@ -18,7 +18,7 @@ export class CategoriesPage implements OnInit {
 
   ngOnInit() {
     this.getCategories();
-    this.selectCategory('5eb2ec3208731061089f9a62')
+    //this.selectCategory('5eb2ec3208731061089f9a62')
   }
   getCategories(){
     this.api.getResource('categories')
